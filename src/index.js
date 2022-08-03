@@ -1,7 +1,8 @@
 import React from "react"
 import ReactDom from "react-dom"
+import App from "./App"
 
 ReactDom.render(
-	<h1 id="title">Olá mundo!!!</h1>,
+	<App></App>,
 	document.getElementById('root')
 )
