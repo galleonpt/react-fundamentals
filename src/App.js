@@ -9,7 +9,6 @@ export default function App(){
 		{ id: Math.random(), title: "Title#03", subtitle: "Sub#03", likes: 30 },
 	])
 
-
 	function handleRefresh(){
 		setPosts((prevState) => [
 			...prevState, 
@@ -17,6 +16,10 @@ export default function App(){
 				id: Math.random(), title: `Title#${prevState.length +1}`, subtitle: `Sub#${prevState.length +1}`, likes: 10
 			}
 		])
+	}
+
+	function handleRemovePost(postId){
+		setPosts((prevState)=> prevState.filter(post => post.id !== postId))
 	}
 
 	return (
@@ -32,7 +35,16 @@ export default function App(){
 
 			{posts.map(item=>{
 				return (
-					<Post key={item.title+item.subtitle} likes={item.likes} post={{title: item.title, subtitle: item.subtitle}}/>
+					<Post 
+						key={item.id} 
+						likes={item.likes} 
+						post={{
+							id: item.id,
+							title: item.title, 
+							subtitle: item.subtitle
+						}}
+						onRemove={handleRemovePost}
+					/>
 				)
 			})}
 		</>
