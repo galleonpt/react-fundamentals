@@ -3,6 +3,7 @@ import Post from "./Post"
 import Header from "./Header"
 import { ThemeProvider } from "./ThemeContext"
 
+import styles from "./App.css"
 
 export default function App(){
 
@@ -29,7 +30,7 @@ export default function App(){
 	return (
 		<ThemeProvider>
 			<Header title="JStack's Blog">
-				<h2>
+				<h2 className={styles.title}>
 					Weekly posts
 					<button onClick={handleRefresh}>Refresh</button>
 				</h2>
