@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import Post from "./Post"
-import Header from "./Header"
-import { ThemeProvider } from "./ThemeContext"
+import Post from "../Post"
+import Header from "../Header"
+import { ThemeProvider } from "../../context/ThemeContext"
 
-import styles from "./App.css"
+import {Title} from "./styles"
 
 export default function App(){
 
@@ -30,10 +30,10 @@ export default function App(){
 	return (
 		<ThemeProvider>
 			<Header title="JStack's Blog">
-				<h2 className={styles.title}>
+				<Title as="h2">
 					Weekly posts
 					<button onClick={handleRefresh}>Refresh</button>
-				</h2>
+				</Title>
 			</Header>
 
 			<hr></hr>
